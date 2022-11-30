@@ -15,36 +15,27 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
         {
 
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-            //driver.SwitchTo().Window(driver.WindowHandles.First()).Close();
 
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//h3[contains(text(),'Restrictions and requirements')]")));
 
             IWebElement frame1 = driver.FindElement(By.Id("sherpa-widget-container"));
 
-
             driver.SwitchTo().Frame(frame1).SwitchTo().Frame(0);
 
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//search-ui-passport-search//sherpa-apps-filter-chip//button"))).Click();
-            //JavaScriptClick(wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//search-ui-passport-search//sherpa-apps-filter-chip//button"))), driver);
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(".//input[@placeholder='Choose your passport']"))).SendKeys("Israel");
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(".//span[contains(text(),' Israel (ISR)')]"))).Click();
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("(//sherpa-apps-filter-chip//button)[3]"))).Click();
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//input[@placeholder='Enter city, region or airport']"))).SendKeys("France");
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(".//span[contains(text(),'France')]"))).Click();
             
-            // driver.SwitchTo().DefaultContent();  Put at the end of the iframes methods
         }
-
 
         public bool PopupInfoIsDisplayed(IWebDriver driver, WebDriverWait wait , string message)
         {
             IWebElement element =  wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//sherpa-apps-map-segment-summary//h2")));
-            //IWebElement popupContainerLocator = driver.FindElement(By.XPath("//sherpa-apps-map-segment//h2[@class='mat-subheading-1']"));
-
-            return element.Text.Contains(message);
-            
-
-
+    
+            return element.Text.Contains(message); 
             //driver.SwitchTo().DefaultContent();
         }
     }
