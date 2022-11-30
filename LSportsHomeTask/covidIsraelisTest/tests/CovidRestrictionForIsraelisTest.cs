@@ -27,7 +27,8 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
             covidTravelsPage.FillPersonalData(driver, wait);
 
             ConsoleReporter.Log("Step 5 - Verify Covid-info popup displayed");
-            covidTravelsPage.PopupInfoIsDisplayed(driver, wait).Should().BeTrue().Print("Covid Popup displayed");
+
+            covidTravelsPage.PopupInfoIsDisplayed(driver, wait, "Most travelers from Israel can enter France, but there are restrictions.").Should().BeTrue().Print("Covid Popup displayed");
 
 
 
