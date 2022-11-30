@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="FluentAssertions" Version="6.8.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
     <PackageReference Include="NUnit" Version="3.13.3" />
@@ -28,9 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="covidIsraelisTest\components\" />
     <Folder Include="covidIsraelisTest\drivers\" />
-    <Folder Include="covidIsraelisTest\tests\" />
   </ItemGroup>
 
 </Project>
