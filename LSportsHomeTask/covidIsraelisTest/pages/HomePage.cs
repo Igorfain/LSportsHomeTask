@@ -22,6 +22,12 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(".//span[contains(text(),'Attractions')]"))).Click();
             return this;
         }
+
+        public void ClickExploreDealsLink(IWebDriver driver,WebDriverWait wait) 
+        {
+            IWebElement exploreDealsLink = driver.FindElement(By.XPath(".//span[contains(text(),'Explore deals')]"));
+            exploreDealsLink.Click();
+        }
         
     }
 }

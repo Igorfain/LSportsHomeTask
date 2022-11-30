@@ -1,8 +1,8 @@
+using FluentAssertions;
 using LSportsHomeTask.covidIsraelisTest.Infra;
 using LSportsHomeTask.covidIsraelisTest.pages;
-using LSportsHomeTask.covidIsraelisTest.tests;
 
-namespace LSportsHomeTask
+namespace LSportsHomeTask.covidIsraelisTest.tests
 {
     public class Tests : BaseTest
     {
@@ -12,7 +12,7 @@ namespace LSportsHomeTask
         [Category("covidPopUpPageTestInBooking")]
         public void CovidRestrictionForIsraelisTest()
         {
-            String pageUrl = "https://www.booking.com/";
+            string pageUrl = "https://www.booking.com/";
             ConsoleReporter.Log("Step 1 - Navigate to Booking Home Page + Step 2 -Click On Attractions link");
             HomePage homePage = new HomePage(driver, wait)
                 .OpenHomePage(driver, wait, pageUrl)
@@ -24,7 +24,10 @@ namespace LSportsHomeTask
 
             ConsoleReporter.Log("Step 4 - Fill the fields");
             CovidTravelsPage covidTravelsPage = new CovidTravelsPage(driver, wait);
-            covidTravelsPage.FillPersonalData(driver, wait); 
+            covidTravelsPage.FillPersonalData(driver, wait);
+
+            ConsoleReporter.Log("Step 5 - Verify Covid-info popup displayed");
+            covidTravelsPage.PopupInfoIsDisplayed(driver, wait).Should().BeTrue().Print("Covid Popup displayed");
 
 
 
