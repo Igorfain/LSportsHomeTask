@@ -9,7 +9,7 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
 
 
         [Test]
-        [Category("covidPopUpPageTestInBooking")]
+        [Category("Booking Covid PopUp PageTest")]
         public void CovidRestrictionForIsraelisTest()
         {
             string popupMessage = "Most travelers from Israel can enter France, but there are restrictions.";

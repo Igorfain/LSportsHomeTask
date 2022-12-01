@@ -10,9 +10,9 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
         }
 
         public void ClickReadMoreLink(IWebDriver driver, WebDriverWait wait)
-        { 
-           wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.LinkText("Read more"))).Click();
-           
+        {
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.LinkText("Read more"))).Click();
+
         }
     }
 }
