@@ -1,5 +1,8 @@
-# Project name :LSportsHomeTask
-# Project Requirements:
-1.Visual Studio 
-2.Open NUnit project
-3.
+## Project name :LSportsHomeTask
+
+This is a repository LSports Test Home Assigment Automation Project
+## Project Requirements:
+* Visual Studio (.NET)
+* NUnit (NUnit project)
+* Selenium
+* Fluent Assertion framework
