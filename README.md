@@ -1,4 +1,4 @@
-# Project name :LSportsHomeTask
+## Project name :LSportsHomeTask
 
 This is a repository LSports Test Home Assigment Automation Project
 ## Project Requirements:
