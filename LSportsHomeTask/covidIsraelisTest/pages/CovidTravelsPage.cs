@@ -14,13 +14,13 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
         {
 
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h3[contains(text(),'Restrictions and requirements')]")));
 
             IWebElement frame1 = driver.FindElement(By.Id("sherpa-widget-container"));
+           // driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
             driver.SwitchTo().Frame(frame1).SwitchTo().Frame(0);
-
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//search-ui-passport-search//sherpa-apps-filter-chip//button"))).Click();
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(".//input[@placeholder='Choose your passport']"))).SendKeys("Israel");
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(".//span[contains(text(),' Israel (ISR)')]"))).Click();

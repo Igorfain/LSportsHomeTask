@@ -13,7 +13,7 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
         public EilatSearchResultPage SelectVeryGoodCheckBox(IWebDriver driver, WebDriverWait wait)
         {
-            //var closePopupButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div//button[@aria-label='Dismiss sign-in info.']")));
+            //var closePopupButton = wait.Until(ElementToBeClickable(By.XPath("//div//button[@aria-label='Dismiss sign-in info.']")));
             //// closePopupButton.Click();
             //if (closePopupButton.Equals(closePopupButton))
 
