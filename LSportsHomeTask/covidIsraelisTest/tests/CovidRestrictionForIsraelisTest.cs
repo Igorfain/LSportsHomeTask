@@ -12,7 +12,9 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
         [Category("covidPopUpPageTestInBooking")]
         public void CovidRestrictionForIsraelisTest()
         {
+            string popupMessage = "Most travelers from Israel can enter France, but there are restrictions.";
             string pageUrl = "https://www.booking.com/";
+
             ConsoleReporter.Log("Step 1 - Navigate to Booking Home Page + Step 2 -Click On Attractions link");
             HomePage homePage = new HomePage(driver, wait)
                 .OpenHomePage(driver, wait, pageUrl)
@@ -27,8 +29,10 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
             covidTravelsPage.FillPersonalData(driver, wait);
 
             ConsoleReporter.Log("Step 5 - Verify Covid-info popup displayed");
+            covidTravelsPage.PopupInfoIsDisplayed(driver, wait, popupMessage).Should().BeTrue().Print("Covid Popup displayed");
 
-            covidTravelsPage.PopupInfoIsDisplayed(driver, wait, "Most travelers from Israel can enter France, but there are restrictions.").Should().BeTrue().Print("Covid Popup displayed");
+            ConsoleReporter.Log("Step 6 - Get the text of the first paragraph and print it to the Log");
+            covidTravelsPage.GetTextFromPopup(driver);
 
 
 

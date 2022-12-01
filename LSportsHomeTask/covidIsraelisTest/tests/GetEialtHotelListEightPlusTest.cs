@@ -24,7 +24,6 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
             ConsoleReporter.Log("Step 4 - Select Review Score-Very Good +8 checkbox");
             EilatSearchResultPage eilatSearchResultPage = new EilatSearchResultPage(driver, wait);
             eilatSearchResultPage.SelectVeryGoodCheckBox(driver,wait);
-
         }
     }
 }

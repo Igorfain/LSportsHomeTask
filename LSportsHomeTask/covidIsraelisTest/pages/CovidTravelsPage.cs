@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -36,7 +37,14 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
             IWebElement element =  wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//sherpa-apps-map-segment-summary//h2")));
     
             return element.Text.Contains(message); 
-            //driver.SwitchTo().DefaultContent();
         }
+
+        public void GetTextFromPopup(IWebDriver driver)
+        {
+            IWebElement element = driver.FindElement(By.XPath("//sherpa-apps-map-segment-summary//h2"));
+            Console.WriteLine("First paragraph text : " + element.Text);
+        }
+
+
     }
 }
