@@ -10,6 +10,7 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
         [Test]
         public void GetEilatHotelsScoreEightPlus()
         {
+            double score = 8.0;
             string pageUrl = "https://www.booking.com/";
             ConsoleReporter.Log("Step 1 - Navigate to Booking Home Page");
             HomePage homePage = new HomePage(driver, wait)
@@ -24,8 +25,8 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
 
             ConsoleReporter.Log("Step 4 - Select Review Score-Very Good +8 checkbox");
             EilatSearchResultPage eilatSearchResultPage = new EilatSearchResultPage(driver, wait);
-            eilatSearchResultPage.SelectVeryGoodCheckBox(driver, wait)
-                .CheckAllResultsAreEight(driver, wait);
+            eilatSearchResultPage.SelectVeryGoodCheckBox(driver, wait);
+            eilatSearchResultPage.VerifyAllResultsAreEight(driver, wait,score).Should().BeTrue().Print($"All resultse are {score} and greater");    
         }
     }
 }

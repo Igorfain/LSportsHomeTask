@@ -11,8 +11,8 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
         public void SearchEilatHotels(IWebDriver driver, WebDriverWait wait)
         {
-            IWebElement searchFieldLocator = driver.FindElement(By.Name("ss"));
-            searchFieldLocator.SendKeys("Eilat");
+            IWebElement element = driver.FindElement(By.Name("ss"));
+            element.SendKeys("Eilat");
             IWebElement searchButton = driver.FindElement(By.XPath(".//button[@type='submit']"));
             searchButton.Click();
         }

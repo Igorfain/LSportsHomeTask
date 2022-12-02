@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-
+using SeleniumExtras.WaitHelpers;
 
 namespace LSportsHomeTask.covidIsraelisTest.pages
 {
@@ -19,14 +19,14 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
         public HomePage ClickAttractionsLink(IWebDriver driver, WebDriverWait wait)
         {
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(".//span[contains(text(),'Attractions')]"))).Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(".//span[contains(text(),'Attractions')]"))).Click();
             return this;
         }
 
         public void ClickExploreDealsLink(IWebDriver driver, WebDriverWait wait)
         {
-            IWebElement exploreDealsLink = driver.FindElement(By.XPath(".//span[contains(text(),'Explore deals')]"));
-            exploreDealsLink.Click();
+            IWebElement element = driver.FindElement(By.XPath(".//span[contains(text(),'Explore deals')]"));
+            element.Click();
         }
 
     }

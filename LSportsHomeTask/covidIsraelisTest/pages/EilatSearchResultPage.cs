@@ -1,6 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using System;
 
 namespace LSportsHomeTask.covidIsraelisTest.pages
 {
@@ -13,16 +15,8 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
         public EilatSearchResultPage SelectVeryGoodCheckBox(IWebDriver driver, WebDriverWait wait)
         {
-            //var closePopupButton = wait.Until(ElementToBeClickable(By.XPath("//div//button[@aria-label='Dismiss sign-in info.']")));
-            //// closePopupButton.Click();
-            //if (closePopupButton.Equals(closePopupButton))
-
-            //{
-            //    //IWebElement closePopupButton = driver.FindElement(By.XPath("//div//button[@aria-label='Dismiss sign-in info.']"));
-            //    closePopupButton.Click();
-            //}
-
             driver.Navigate().Refresh();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@type='submit']")));
             IJavaScriptExecutor js = driver as IJavaScriptExecutor;
             js.ExecuteScript("window.scrollBy(0,2700)");
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("(//div[@data-filters-group='review_score']//div[@data-filters-item='review_score:review_score=80'])[1]")));
@@ -33,12 +27,21 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
         }
 
-        public EilatSearchResultPage CheckAllResultsAreEight(IWebDriver driver, WebDriverWait wait)
+        public bool VerifyAllResultsAreEight(IWebDriver driver, WebDriverWait wait, double score)
         {
-            var locator = driver.FindElements(By.XPath(".//div[contains(text(),'8')]"));
-            Console.WriteLine("The count of results with 8+ are : " + locator.Count());
-   
-            return this;
+            
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@data-testid='review-score']//div[contains(@aria-label,'Scored')]")));
+            var elements = driver.FindElements(By.XPath("//div[@data-testid='review-score']//div[contains(@aria-label,'Scored ')]"));
+           
+            for (int index=0; index < elements.Count; index++)
+            {
+                double elementScore = Convert.ToDouble(elements[index].Text);
+                if (score > elementScore) {
+                    Console.WriteLine($"The score of the element is {elementScore} lower than {score}");
+                    return false;
+                }
+            }
+            return true;
         }
 
 
