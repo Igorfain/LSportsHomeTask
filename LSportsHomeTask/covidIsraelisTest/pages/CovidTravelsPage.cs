@@ -20,10 +20,10 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
             driver.SwitchTo().Frame(frame1).SwitchTo().Frame(0);
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//search-ui-passport-search//sherpa-apps-filter-chip//button"))).Click();
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(".//input[@placeholder='Choose your passport']"))).SendKeys("Israel");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(".//input[@placeholder='Choose your passport']"))).SendKeys("Israel");
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(".//span[contains(text(),' Israel (ISR)')]"))).Click();
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//sherpa-apps-filter-chip//button)[3]"))).Click();
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@placeholder='Enter city, region or airport']"))).SendKeys("France");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@placeholder='Enter city, region or airport']"))).SendKeys("France");
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(".//span[contains(text(),'France')]"))).Click();
 
         }
