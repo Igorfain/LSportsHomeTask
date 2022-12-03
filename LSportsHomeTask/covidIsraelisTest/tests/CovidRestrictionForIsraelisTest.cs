@@ -29,7 +29,7 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
             covidTravelsPage.FillPersonalData(driver, wait);
 
             ConsoleReporter.Log("Step 5 - Verify Covid-info popup displayed");
-            covidTravelsPage.PopupInfoIsDisplayed(driver, wait, popupMessage).Should().BeTrue().Print("Covid Popup displayed");
+            covidTravelsPage.VerifyPopupInfoIsDisplayed(driver, wait, popupMessage).Should().BeTrue().Print("Covid Popup displayed");
 
             ConsoleReporter.Log("Step 6 - Get the text of the first paragraph and print it to the Log");
             covidTravelsPage.GetTextFromPopup(driver);

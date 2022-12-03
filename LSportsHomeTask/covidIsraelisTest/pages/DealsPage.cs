@@ -13,8 +13,8 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
         {
             IWebElement element = driver.FindElement(By.Name("ss"));
             element.SendKeys("Eilat");
-            IWebElement searchButton = driver.FindElement(By.XPath(".//button[@type='submit']"));
-            searchButton.Click();
+            IWebElement element1 = driver.FindElement(By.XPath(".//button[@type='submit']"));
+            element1.Click();
         }
     }
 }

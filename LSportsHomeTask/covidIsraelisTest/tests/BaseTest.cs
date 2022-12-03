@@ -23,7 +23,7 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
         }
 
         [TearDown]
-        public void closeBrowser()
+        public void CloseBrowser()
         {
             driver.Quit();
         }

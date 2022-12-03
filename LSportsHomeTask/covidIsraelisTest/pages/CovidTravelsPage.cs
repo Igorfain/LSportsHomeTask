@@ -28,7 +28,7 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
         }
 
-        public bool PopupInfoIsDisplayed(IWebDriver driver, WebDriverWait wait, string message)
+        public bool VerifyPopupInfoIsDisplayed(IWebDriver driver, WebDriverWait wait, string message)
         {
             IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//sherpa-apps-map-segment-summary//h2")));
 
