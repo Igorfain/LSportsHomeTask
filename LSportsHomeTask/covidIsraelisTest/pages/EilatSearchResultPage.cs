@@ -29,9 +29,11 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 
         public bool VerifyAllResultsAreEightAndUp(IWebDriver driver, WebDriverWait wait, double score)
         {
-            
+
+            var rate = driver.FindElements(By.XPath("//div[@data-filters-item='review_score:review_score=80']//div[@data-testid='filters-group-label-container']//span"))[0].Text;
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath($"//h1[contains(text(),'Eilat: {rate} properties found')]")));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@data-testid='review-score']//div[contains(@aria-label,'Scored')]")));
-            var elements = driver.FindElements(By.XPath("//div[@data-testid='review-score']//div[contains(@aria-label,'Scored ')]"));
+            var elements = driver.FindElements(By.XPath("//div[@data-testid='property-card']//div[@data-testid='review-score']//div[contains(@aria-label,'Scored ')]"));
            
             for (int i=0; i < elements.Count; i++)
             {

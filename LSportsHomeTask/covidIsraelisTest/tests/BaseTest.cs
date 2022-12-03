@@ -15,9 +15,10 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
         public void Setup()
         {
             ChromeOptions options = new ChromeOptions();
-            options.AddArguments("--incognito");
+            options.AddArguments("--incognito"); 
             driver = new ChromeDriver(@"C:\Users\IGR_2\source\repos\TestProject2\drivers", options);
             driver.Manage().Window.Maximize();
+ 
             wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(20000));
             ConsoleReporter.Log("Test start time: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
         }

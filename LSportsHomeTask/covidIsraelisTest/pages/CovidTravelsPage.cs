@@ -13,8 +13,9 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
         public void FillPersonalData(IWebDriver driver, WebDriverWait wait)
         {
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h3[contains(text(),'Restrictions and requirements')]")));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("sherpa-widget-container")));
+
 
             IWebElement frame1 = driver.FindElement(By.Id("sherpa-widget-container"));
 
