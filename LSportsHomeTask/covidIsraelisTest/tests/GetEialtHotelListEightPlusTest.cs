@@ -13,20 +13,20 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
             double score = 8.0;
             string pageUrl = "https://www.booking.com/";
             ConsoleReporter.Log("Step 1 - Navigate to Booking Home Page");
-            HomePage homePage = new HomePage(driver, wait)
-                .OpenHomePage(driver, wait, pageUrl);
+            HomePage homePage = new HomePage(Driver, Wait)
+                .OpenHomePage(Driver, Wait, pageUrl);
 
             ConsoleReporter.Log("Step 2 - Click on “Explore deals”");
-            homePage.ClickExploreDealsLink(driver, wait);
+            homePage.ClickExploreDealsLink(Driver, Wait);
 
             ConsoleReporter.Log("Step 3 - Search Eilat hotels");
-            DealsPage dealsPage = new DealsPage(driver, wait);
-            dealsPage.SearchEilatHotels(driver, wait);
+            DealsPage dealsPage = new DealsPage(Driver, Wait);
+            dealsPage.SearchEilatHotels(Driver, Wait);
 
             ConsoleReporter.Log("Step 4 - Select Review Score-Very Good +8 checkbox");
-            EilatSearchResultPage eilatSearchResultPage = new EilatSearchResultPage(driver, wait);
-            eilatSearchResultPage.SelectVeryGoodCheckBox(driver, wait);
-            eilatSearchResultPage.VerifyAllResultsAreEightAndUp(driver, wait,score).Should().BeTrue().Print($"All resultse are {score} and greater");    
+            EilatSearchResultPage eilatSearchResultPage = new EilatSearchResultPage(Driver, Wait);
+            eilatSearchResultPage.SelectVeryGoodCheckBox(Driver, Wait);
+            eilatSearchResultPage.VerifyAllResultsAreEightAndUp(Driver, Wait,score).Should().BeTrue().Print($"All resultse are {score} and greater");    
         }
     }
 }

@@ -16,23 +16,23 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
             string pageUrl = "https://www.booking.com/";
 
             ConsoleReporter.Log("Step 1 - Navigate to Booking Home Page + Step 2 -Click On Attractions link");
-            HomePage homePage = new HomePage(driver, wait)
-                .OpenHomePage(driver, wait, pageUrl)
-                .ClickAttractionsLink(driver, wait);
+            HomePage homePage = new HomePage(Driver, Wait)
+                .OpenHomePage(Driver, Wait, pageUrl)
+                .ClickAttractionsLink(Driver, Wait);
 
             ConsoleReporter.Log("Step 3 - Click on Read More link");
-            AttractionsPage attractionsPage = new AttractionsPage(driver, wait);
-            attractionsPage.ClickReadMoreLink(driver, wait);
+            AttractionsPage attractionsPage = new AttractionsPage(Driver, Wait);
+            attractionsPage.ClickReadMoreLink(Driver, Wait);
 
             ConsoleReporter.Log("Step 4 - Fill the fields");
-            CovidTravelsPage covidTravelsPage = new CovidTravelsPage(driver, wait);
-            covidTravelsPage.FillPersonalData(driver, wait);
+            CovidTravelsPage covidTravelsPage = new CovidTravelsPage(Driver, Wait);
+            covidTravelsPage.FillPersonalData(Driver, Wait);
 
             ConsoleReporter.Log("Step 5 - Verify Covid-info popup displayed");
-            covidTravelsPage.VerifyPopupInfoIsDisplayed(driver, wait, popupMessage).Should().BeTrue().Print("Covid Popup displayed");
+            covidTravelsPage.VerifyPopupInfoIsDisplayed(Driver, Wait, popupMessage).Should().BeTrue().Print("Covid Popup displayed");
 
             ConsoleReporter.Log("Step 6 - Get the text of the first paragraph and print it to the Log");
-            covidTravelsPage.GetTextFromPopup(driver);
+            covidTravelsPage.GetTextFromPopup(Driver);
 
 
 

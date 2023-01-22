@@ -6,13 +6,13 @@ namespace LSportsHomeTask.covidIsraelisTest.pages
 {
     public abstract class BasePage
     {
-        private IWebDriver driver;
-        private WebDriverWait wait;
+        protected IWebDriver Driver;
+        protected WebDriverWait Wait;
 
         public BasePage(IWebDriver driver, WebDriverWait wait)
         {
-            this.driver = driver;
-            this.wait = wait;
+            this.Driver = driver;
+            this.Wait = wait;
         }
     }
 }
