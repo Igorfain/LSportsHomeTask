@@ -8,25 +8,25 @@ namespace LSportsHomeTask.covidIsraelisTest.tests
     public abstract class BaseTest
     {
 
-        public IWebDriver driver;
-        public WebDriverWait wait;
+        public IWebDriver Driver;
+        public WebDriverWait Wait;
 
         [SetUp]
         public void Setup()
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("--incognito"); 
-            driver = new ChromeDriver(@"C:\Users\IGR_2\source\repos\TestProject2\drivers", options);
-            driver.Manage().Window.Maximize();
+            Driver = new ChromeDriver(@"covidIsraelisTest\drivers", options);
+            Driver.Manage().Window.Maximize();
  
-            wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(20000));
+            Wait = new WebDriverWait(Driver, TimeSpan.FromMilliseconds(20000));
             ConsoleReporter.Log("Test start time: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
         }
 
         [TearDown]
         public void CloseBrowser()
         {
-            driver.Quit();
+            Driver.Quit();
         }
     }
 }
