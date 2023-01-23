@@ -6,4 +6,4 @@ This is a repository LSports Test Home Assigment Automation Project
 * NUnit (NUnit project)
 * Selenium
 * Fluent Assertion framework
-ChromeDriver version : 109
+* ChromeDriver version : 109
